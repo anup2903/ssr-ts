@@ -37,14 +37,7 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
     
     console.log(apiData[0].drillName);
 
-    // Assuming the API response structure is like:
-    // { drillId: string, title: string, description: string, imageUrl: string }
-    // const data: Data = {
-    //   id:`${id}`,
-    //   title: `Title for ${id}`,
-    //   description: `Description for ${id}`,
-    //   // image: `https://via.placeholder.com/150?text=${id}`
-    // };
+  
     const data: Data = {
       id: apiData[0].drillId || "",
       title: apiData[0].drillName,
@@ -67,9 +60,12 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
 
 const Page: NextPage<PageProps> = ({ data }) => {
   useEffect(()=>{
-    setTimeout(() => {
-      window.location.href="https://whereuelevate.com/drills/cosmocloud-hackathon"
-    }, 10);
+    // setTimeout(() => {
+    console.log("redirecting");
+    
+      window.location.href="https://whereuelevate.com/drills/cosmocloud-hackathon";
+
+    // }, 10);
   },[])
   return (
     <>
