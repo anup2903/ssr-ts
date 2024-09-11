@@ -44,11 +44,16 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
       description: apiData[0].drillNature,
       image: apiData[0].drillCoverImgUrl || `https://via.placeholder.com/150?text=${id}`, // Fallback if no image URL
     };
+    
 
     return {
       props: {
         data,
       },
+      redirect: {
+        destination: 'https://whereuelevate.com/drills/cosmocloud-hackathon',
+        permanent: true, // Use `true` for a permanent redirect (301)
+      }
     };
   } catch (error) {
     console.error(error);
