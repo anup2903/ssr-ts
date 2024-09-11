@@ -46,7 +46,7 @@ const Page: NextPage<PageProps> = ({ data }) => {
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
         <meta property="og:image" content={data.image} />
-        <meta property="og:url"  content={`${siteUrl}/${data.id}`} />
+        {/* <meta property="og:url"  content={`${siteUrl}/${data.id}`} /> */}
         {/* Add more meta tags as needed */}
       </Head>
       <main>
