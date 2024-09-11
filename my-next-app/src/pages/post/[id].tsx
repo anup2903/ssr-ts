@@ -2,6 +2,7 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
+import { useEffect } from 'react';
 
 interface Data {
   id: string;
@@ -19,8 +20,7 @@ interface PageProps {
 }
 
 export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (context) => {
-  const { id } = context.params || {}; // Assert that params is not undefined
-  console.log("dflk");
+  const { id } = context.params || {}; 
   
   try {
     
@@ -66,6 +66,11 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
 };
 
 const Page: NextPage<PageProps> = ({ data }) => {
+  useEffect(()=>{
+    setTimeout(() => {
+      window.location.href="https://whereuelevate.com/drills/cosmocloud-hackathon"
+    }, 10);
+  },[])
   return (
     <>
       <Head>
