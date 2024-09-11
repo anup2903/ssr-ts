@@ -58,7 +58,6 @@ const Page: NextPage<PageProps> = ({ data }) => {
           width={150} // specify width
           height={150} // specify height
         />
-        <img src={data.image} alt={data.title} />
       </main>
     </>
   );
