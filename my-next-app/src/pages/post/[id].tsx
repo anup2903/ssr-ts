@@ -1,6 +1,7 @@
 // pages/[id].tsx
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 
 interface Data {
@@ -37,7 +38,6 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
 };
 
 const Page: NextPage<PageProps> = ({ data }) => {
-    const siteUrl = 'https://ssr-test.netlify.app';
   return (
     <>
       <Head>
@@ -52,6 +52,12 @@ const Page: NextPage<PageProps> = ({ data }) => {
       <main>
         <h1>{data.title}</h1>
         <p>{data.description}</p>
+        <Image
+          src={data.image}
+          alt={data.title}
+          width={150} // specify width
+          height={150} // specify height
+        />
         <img src={data.image} alt={data.title} />
       </main>
     </>
