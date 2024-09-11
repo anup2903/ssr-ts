@@ -50,10 +50,10 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
       props: {
         data,
       },
-      redirect: {
-        destination: 'https://whereuelevate.com/drills/cosmocloud-hackathon',
-        permanent: true, // Use `true` for a permanent redirect (301)
-      }
+      // redirect: {
+      //   destination: 'https://whereuelevate.com/drills/cosmocloud-hackathon',
+      //   permanent: false, // Use `true` for a permanent redirect (301)
+      // }
     };
   } catch (error) {
     console.error(error);
