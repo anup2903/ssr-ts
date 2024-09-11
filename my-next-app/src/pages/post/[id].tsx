@@ -1,8 +1,6 @@
 // pages/[id].tsx
 import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import { title } from 'process';
 import { ParsedUrlQuery } from 'querystring';
 
 interface Data {
