@@ -47,7 +47,7 @@ console.log(jobId);
   
     const data: Data = {
       partnerName: apiData.partnerName ,
-      image: apiData.partnerLogoPath || `https://via.placeholder.com/150?text=${id}`, // Fallback if no image URL
+      image: apiData.partner.partnerLogoPath || `https://via.placeholder.com/150?text=${id}`, // Fallback if no image URL
     };
     
 
