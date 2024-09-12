@@ -27,12 +27,9 @@ export const getServerSideProps: GetServerSideProps<PageProps, Params> = async (
 
     const response1 = await fetch(`https://api.whereuelevate.com/internity/api/v1/drills/${id}`)
     console.log(response1);
-    const responseData1 = await response1.json(); // Assuming you need data from the first fetch
-
-// Example: Extracting `drillId` from responseData1
+    const responseData1 = await response1.json(); 
 const drillId = responseData1.drillId;
     
-    // Fetch data from the API using the drillId
     const response2 = await fetch(`https://api.whereuelevate.com/internity/api/v1/drills?drillId=${drillId}`);
     
     
@@ -58,15 +55,11 @@ const drillId = responseData1.drillId;
       props: {
         data,
       },
-      // redirect: {
-      //   destination: 'https://whereuelevate.com/drills/cosmocloud-hackathon',
-      //   permanent: false, // Use `true` for a permanent redirect (301)
-      // }
     };
   } catch (error) {
     console.error(error);
     return {
-      notFound: true, // Return a 404 page in case of error
+      notFound: true, 
     };
   }
 };
@@ -90,19 +83,10 @@ const Page: NextPage<PageProps> = ({ data }) => {
       <Head>
         <title>{data.title}</title>
         <meta property="og:title" content={data.title} />
-        <meta property="og:description" content={data.description} />
         <meta property="og:image" content={data.image} />
-        {/* <meta property="og:url"  content={`${siteUrl}/${data.id}`} /> */}
-        {/* Add more meta tags as needed */}
       </Head>
       <div style={{display:"flex" ,flexDirection:"column",justifyContent:"center" ,margin:"0 auto" ,alignItems:"center",backgroundClip:"white" ,height:"100vh" }}>
         <h1>Redirecting to https://whereuelevate.com/drills/{id}</h1>
-        {/* <Image
-          src={data.image}
-          alt={data.title}
-          width={150} // specify width
-          height={150} // specify height
-        /> */}
         <h1>Click here to redirect :</h1>
         <button onClick={redirectButton} style={{padding:"10px" , borderRadius:"30px" , backgroundColor:"grey",color:"white"}}>Redirect</button>
       </div>
