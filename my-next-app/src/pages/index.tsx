@@ -21,8 +21,12 @@ export default function Home() {
           content="Where U Elevate: Connecting next-gen innovative workforce with industry"
           data-react-helmet="true"
         />
-        <meta property="og:description" content="Find the best suited opportunity to showcase your innovative skills with available jobs, hackathons, industry led open innovation programs and career mentoring under saarthi initiative" data-react-helmet="true"/>
-        <meta property="og:image" content="../mainLogo.png"/>
+        <meta
+          property="og:description"
+          content="Find the best suited opportunity to showcase your innovative skills with available jobs, hackathons, industry led open innovation programs and career mentoring under saarthi initiative"
+          data-react-helmet="true"
+        />
+        <meta property="og:image" content="/mainLogo.png" />
       </Head>
       <div
         style={{
